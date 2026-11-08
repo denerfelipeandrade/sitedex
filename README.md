@@ -9,7 +9,6 @@ public/                  tudo o que vai para o ar
   index.html             página inicial
   privacidade.html       política de privacidade (LGPD)
   404.html               página de erro
-  _headers               cabeçalhos de segurança (CSP, HSTS…) aplicados pela Cloudflare Pages
   robots.txt, sitemap.xml, favicon.svg
   assets/css/site.css    estilos (nada de estilo embutido no HTML: a CSP bloqueia)
   assets/js/site.js      menu do celular e pedido de orçamento pelo WhatsApp
@@ -26,15 +25,14 @@ python3 -m http.server 8000 --directory public
 
 e abra http://localhost:8000.
 
-## Publicação (Cloudflare Pages)
+## Publicação (GitHub Pages)
 
-1. Cloudflare → Workers & Pages → Create → Pages → Connect to Git → escolher `sitedex`.
-2. Framework preset: **None** · Build command: **(vazio)** · Build output directory: **`public`**.
-3. Cada push na branch `main` publica o site automaticamente.
-4. Custom domains → adicionar `dexpower.com.br` e `www.dexpower.com.br`.
+O workflow `.github/workflows/publicar.yml` publica a pasta `public/` a cada push na `main`.
+Configuração única no repositório: Settings → Pages → Source: **GitHub Actions**.
+Domínio: Settings → Pages → Custom domain → `dexpower.com.br`, com **Enforce HTTPS** ligado.
 
 ## Segurança
 
 - Sem segredos neste repositório: chaves e senhas nunca entram aqui.
-- `public/_headers` define a política de segurança de conteúdo: só carrega scripts, estilos, imagens e fontes do próprio site.
+- Cada página declara a política de segurança de conteúdo (CSP): só carrega scripts, estilos, imagens e fontes do próprio site.
 - O formulário não guarda dados: monta a mensagem e abre o WhatsApp.

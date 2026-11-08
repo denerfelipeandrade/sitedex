@@ -278,3 +278,17 @@ section { padding: 104px 0 }
   .texto-longo { padding: 48px 0 72px }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } .botao, .whats { transition: none } }
+
+/* ---------- formulário: autorização, isca e confirmação ---------- */
+.form .isca { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden }
+.form label.aceite { display: flex; align-items: flex-start; gap: 10px; font-weight: 400; font-size: 13.5px; color: var(--texto); line-height: 1.5 }
+.form label.aceite input { width: 18px; height: 18px; flex: none; margin-top: 2px; padding: 0; accent-color: var(--verde) }
+.form label.aceite a { color: var(--verde); text-decoration: underline }
+.form .rodape .botao[disabled] { opacity: .6; cursor: wait; transform: none }
+.form.enviado { grid-template-columns: 1fr; align-content: start; justify-items: start; gap: 12px }
+.form.enviado h3 { grid-column: auto }
+.form.enviado .botao { margin-top: 8px }
+.form.enviado .selo-ok { width: 52px; height: 52px; border-radius: 50%; background: #e8f4f0; display: grid; place-items: center }
+.form.enviado .selo-ok svg { width: 28px; height: 28px; fill: none; stroke: var(--verde); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round }
+[hidden] { display: none !important }
+.form .aviso a { color: var(--verde); font-weight: 600; text-decoration: underline }

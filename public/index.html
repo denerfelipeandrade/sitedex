@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://erp.dexpower.com.br; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DEX POWER · Carregadores para veículos elétricos de 7 a 400 kW</title>
@@ -232,9 +232,18 @@
       <label>Cidade<input name="cidade" autocomplete="address-level2" maxlength="60" placeholder="Cidade / UF"></label>
       <label class="inteiro">Onde o carregador vai ficar?<select name="local"><option>Condomínio</option><option>Empresa ou frota</option><option>Posto ou rodovia</option><option>Residência</option><option>Outro</option></select></label>
       <label class="inteiro">Mensagem<textarea name="mensagem" maxlength="1000" placeholder="Quantas vagas, potência desejada, prazo…"></textarea></label>
+      <label class="isca" aria-hidden="true">Site<input name="site" tabindex="-1" autocomplete="off"></label>
+      <label class="aceite inteiro"><input type="checkbox" name="aceite" required> <span>Autorizo a DEX POWER a usar estes dados para responder ao meu pedido, conforme a <a href="privacidade.html">política de privacidade</a>.</span></label>
       <p class="aviso" role="alert"></p>
-      <div class="rodape"><small>Ao enviar, abrimos uma conversa no WhatsApp com o seu pedido. Veja a nossa <a href="privacidade.html">política de privacidade</a>.</small><button class="botao cheio" type="submit">Enviar pedido</button></div>
+      <div class="rodape"><small>Respondemos pelo WhatsApp ou e-mail, em horário comercial.</small><button class="botao cheio" type="submit">Enviar pedido</button></div>
     </form>
+    <div class="form enviado" id="orcamento-enviado" hidden tabindex="-1">
+      <span class="selo-ok" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <h3>Pedido recebido!</h3>
+      <p>Obrigado. Nossa equipe vai entrar em contato pelo WhatsApp ou e-mail em breve.</p>
+      <p>Se preferir adiantar a conversa, fale com a gente agora:</p>
+      <a class="botao cheio" id="orcamento-whats" href="https://wa.me/5531975685224" target="_blank" rel="noopener">Falar agora no WhatsApp</a>
+    </div>
   </div>
 </section>
 </main>
